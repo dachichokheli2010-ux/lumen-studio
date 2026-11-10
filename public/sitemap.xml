@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://lumen-studio-virid.vercel.app/</loc>
-    <lastmod>2026-11-10</lastmod>
-  </url>
+  <url><loc>https://lumen-studio-virid.vercel.app/</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://lumen-studio-virid.vercel.app/ideas</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://lumen-studio-virid.vercel.app/services</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://lumen-studio-virid.vercel.app/ads</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://lumen-studio-virid.vercel.app/pricing</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://lumen-studio-virid.vercel.app/process</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://lumen-studio-virid.vercel.app/faq</loc><lastmod>2026-11-10</lastmod></url>
+  <url><loc>https://lumen-studio-virid.vercel.app/contact</loc><lastmod>2026-11-10</lastmod></url>
 </urlset>

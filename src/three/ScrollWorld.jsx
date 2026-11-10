@@ -159,7 +159,7 @@ function Rig({ progress }) {
 // Sections that paint their own 3D scene; the world pauses behind them so only one scene renders.
 const COVERS = [".svc-sticky", ".contact-stage"];
 
-export default function ScrollWorld() {
+export default function ScrollWorld({ immediate = false }) {
   const progress = useRef(0);
   const [shown, setShown] = useState(false);
   const [running, setRunning] = useState(false);
@@ -176,7 +176,7 @@ export default function ScrollWorld() {
         const r = el.getBoundingClientRect();
         return r.top < innerHeight * 0.35 && r.bottom > innerHeight * 0.65;
       });
-      const past = scrollY > innerHeight * 0.9;
+      const past = immediate || scrollY > innerHeight * 0.9;
       setShown(past);
       setRunning(past && !covered); // a covered world holds its last frame
     };
@@ -184,7 +184,7 @@ export default function ScrollWorld() {
     addEventListener("scroll", on, { passive: true });
     addEventListener("resize", on);
     return () => { removeEventListener("scroll", on); removeEventListener("resize", on); };
-  }, []);
+  }, [immediate]);
 
   return (
     <div className={`world${shown ? " is-awake" : ""}`} aria-hidden="true">

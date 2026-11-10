@@ -116,7 +116,7 @@ input, textarea { caret-color: var(--flare); }
 .btn-line::before { background: var(--bone); }
 .btn-line:hover { color: var(--ink); border-color: var(--bone); }
 .btn-line:disabled:hover { color: var(--bone); border-color: var(--line-2); }
-.btn-flare { background: var(--flare); color: var(--flare-ink); box-shadow: 0 14px 34px -16px rgba(255, 90, 31, .7); }
+.btn-flare { background: var(--flare); color: var(--flare-ink); box-shadow: 0 14px 30px -16px rgba(0, 0, 0, .8); }
 .btn-flare::before { background: var(--bone); }
 .btn:disabled::before { display: none; }
 .link-arrow {

@@ -5,6 +5,7 @@ const dict = {
     nav: {
       ideas: "Ideas", services: "Services", ads: "Ads", price: "Pricing", process: "Process", faq: "FAQ",
       cta: "Get a price", menu: "Menu", close: "Close", skip: "Skip to content",
+      contact: "Contact", home: "Home", next: "Next", notFound: "This page does not exist.",
     },
     hero: {
       title: ["Sites and ads", "that stop the scroll."],
@@ -168,6 +169,7 @@ const dict = {
     nav: {
       ideas: "იდეები", services: "სერვისები", ads: "რეკლამა", price: "ფასები", process: "პროცესი", faq: "კითხვები",
       cta: "ფასის გაგება", menu: "მენიუ", close: "დახურვა", skip: "გადასვლა შინაარსზე",
+      contact: "კონტაქტი", home: "მთავარი", next: "შემდეგი", notFound: "ეს გვერდი არ არსებობს.",
     },
     hero: {
       title: ["საიტები და რეკლამა,", "რომელიც სქროლს აჩერებს."],

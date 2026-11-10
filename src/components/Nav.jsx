@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { useI18n } from "../i18n.jsx";
-import { scrollToId, lockScroll } from "../scroll.js";
+import { lockScroll } from "../scroll.js";
+import { Link, PAGES } from "../router.jsx";
 import { STUDIO } from "./Contact.jsx";
 
 const LINKS = ["ideas", "services", "ads", "price", "process", "faq"];
+const DRAWER = [...LINKS, "contact"];
 
 function LangSwitch() {
   const { lang, setLang } = useI18n();
@@ -41,12 +43,13 @@ function useActiveSection() {
   return active;
 }
 
-export default function Nav() {
+export default function Nav({ page }) {
   const { t } = useI18n();
   const [open, setOpen] = useState(false);
   const [solid, setSolid] = useState(false);
   const [hidden, setHidden] = useState(false);
-  const active = useActiveSection();
+  const section = useActiveSection();
+  const active = page === "home" ? section : page;
   const drawer = useRef();
   const toggle = useRef();
 
@@ -81,34 +84,29 @@ export default function Nav() {
     return () => removeEventListener("keydown", key);
   }, [open]);
 
-  const go = (id) => (e) => {
-    e.preventDefault();
-    // Release the scroll lock first: a stopped smooth-scroller ignores scrollTo.
-    if (open) lockScroll(false);
-    setOpen(false);
-    scrollToId(id);
-  };
+  // Links open pages; release the scroll lock first so the new page can reset its scroll.
+  const close = () => { if (open) lockScroll(false); setOpen(false); };
 
   const cls = ["nav", solid && "is-solid", open && "is-open", hidden && !open && "is-hidden"].filter(Boolean).join(" ");
 
   return (
     <>
       <header className={cls}>
-        <a href="#top" className="brand" onClick={go("top")} aria-label="LUMEN">
+        <Link to="/" className="brand" onClick={close} aria-label="LUMEN">
           <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
             <path d="M12 2.5l8 9.5-8 9.5-8-9.5z" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
             <path d="M4 12h16" stroke="currentColor" strokeWidth="1.2" />
           </svg>
           LUMEN
-        </a>
+        </Link>
         <nav className="nav-links" aria-label="Main">
           {LINKS.map((id) => (
-            <a key={id} href={`#${id}`} onClick={go(id)} aria-current={active === id ? "location" : undefined}>{t.nav[id]}</a>
+            <Link key={id} to={PAGES[id]} onClick={close} aria-current={active === id ? "page" : undefined}>{t.nav[id]}</Link>
           ))}
         </nav>
         <div className="nav-end">
           <LangSwitch />
-          <a href="#price" className="btn btn-flare btn-sm nav-cta" onClick={go("price")}>{t.nav.cta}</a>
+          <Link to={PAGES.price} className="btn btn-flare btn-sm nav-cta" onClick={close}>{t.nav.cta}</Link>
           <button type="button" ref={toggle} className="menu-btn" aria-expanded={open} aria-controls="drawer"
             onClick={() => setOpen((o) => !o)} aria-label={open ? t.nav.close : t.nav.menu}>
             <span /><span />
@@ -120,13 +118,13 @@ export default function Nav() {
       <aside className={`drawer${open ? " is-open" : ""}`} id="drawer" ref={drawer} aria-label={t.nav.menu}
         inert={open ? undefined : ""} data-lenis-prevent>
         <nav className="drawer-links" aria-label="Mobile">
-          {LINKS.map((id, i) => (
-            <a key={id} href={`#${id}`} onClick={go(id)} style={{ "--i": i }} aria-current={active === id ? "location" : undefined}>
+          {DRAWER.map((id, i) => (
+            <Link key={id} to={PAGES[id]} onClick={close} style={{ "--i": i }} aria-current={active === id ? "page" : undefined}>
               <span>{t.nav[id]}</span>
-            </a>
+            </Link>
           ))}
         </nav>
-        <a href="#price" className="btn btn-flare btn-block" onClick={go("price")}>{t.nav.cta}</a>
+        <Link to={PAGES.price} className="btn btn-flare btn-block" onClick={close}>{t.nav.cta}</Link>
         <div className="drawer-foot">
           <a href={`mailto:${STUDIO.email}`}>{STUDIO.email}</a>
           <LangSwitch />

@@ -37,3 +37,9 @@ export function lockScroll(lock) {
 }
 
 export { gsap, ScrollTrigger, SplitText };
+
+// Jump to the top without animation (used when a new page opens).
+export function resetScroll() {
+  if (lenis) lenis.scrollTo(0, { immediate: true, force: true });
+  else scrollTo(0, 0);
+}
