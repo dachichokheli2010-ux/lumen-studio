@@ -30,7 +30,7 @@ export default function Hero({ ready }) {
         <div className={`hero-row${ready ? " in" : ""}`}>
           <p className="hero-sub">{t.hero.sub}</p>
           <div className="hero-actions">
-            <a href="#price" className="btn btn-bone" onClick={go("price")}>
+            <a href="#price" className="btn btn-flare" onClick={go("price")}>
               {t.hero.primary}
               <Arrow />
             </a>

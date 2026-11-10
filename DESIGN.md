@@ -7,6 +7,8 @@ colors:
   ink-3: "#1a1a1b"
   bone: "#edebe6"
   stone: "#9b978f"
+  flare: "#ff5a1f"
+  flare-dim: "rgba(255, 90, 31, 0.14)"
   line: "rgba(237, 235, 230, 0.14)"
   line-2: "rgba(237, 235, 230, 0.28)"
   danger: "#ff8a7a"
@@ -150,23 +152,24 @@ components:
 
 **Creative North Star: "The Lit Stage"**
 
-LUMEN is a dark studio with one light source. The ground is ink, the type is bone, everything secondary is warm stone, and the only colour on the page arrives as spectral dispersion through a real-time 3D crystal. The chrome never competes with the glass: no accent hue, no gradients in the UI, no cards standing in for structure. Hairline rules and very large, wide Archivo carry the hierarchy.
+LUMEN is a dark studio with one light source. The ground is ink, the type is bone, everything secondary is warm stone, and one signal colour, flare orange, marks the next action and what the visitor has chosen. The same orange enters the 3D as a single warm light, so the diamond's glints and the buttons belong to one system. No gradients in the UI, no cards standing in for structure. Hairline rules and very large, wide Archivo carry the hierarchy.
 
 Density is low and the scale is theatrical. Headlines run wide (variable width axis 112 to 125) and tightly tracked, sections are separated by 120 to 200px of ink, and lists are typographic index rows that invert to bone on hover. Motion is one grammar everywhere: expo-out, line-masked reveals, and wipes driven by clip-path.
 
 **Key Characteristics:**
-- Ink, bone and stone only; colour comes from refraction, never from a UI token.
+- Ink, bone and stone, plus flare for action and selection only.
 - Wide Archivo display, set tight; Noto Sans Georgian set looser and calmer.
 - Bone pill buttons and pill chips; hairline rules instead of containers.
 - Expo-out everywhere: line reveals, fill wipes, row wipes.
-- The 3D stage (crystal, wordmark, studio light rig) is the hero and the signature.
+- 3D carries the page: a scroll-driven background world (a tunnel of dark glinting crystals, light rings and dust the camera travels down, behind a veil that keeps copy legible), a brilliant-cut diamond over the wordmark, a sticky stage in Services (glass pane, glass knot, ad stack), and a gem cluster at the close.
 
 ## Colors
 
-A near-monochrome warm-neutral palette on ink, lit only by the glass.
+A warm-neutral palette on ink with one signal colour.
 
 ### Primary
-- **Bone** (`bone`): all primary type, the filled pill button, the selected chip, segment and switch states, focus outlines, the slider thumb, and the hover wash on index rows. Bone is both the text colour and the only "accent" in the UI.
+- **Bone** (`bone`): all primary type, secondary filled buttons (Next), the selected chip, language and segment states, and the slider thumb.
+- **Flare** (`flare`): primary calls to action (Get a price, Send, Add to estimate), selected radios, checkboxes, switches, the range fill, step progress, the active nav dot, focus rings, selection and the caret. Text on flare is ink (about 6.6:1). `flare-dim` tints a selected feature tile.
 
 ### Neutral
 - **Ink** (`ink`): page ground, the 3D canvas clear colour, the loader, the menu and preview overlays, and the text on bone fills.
@@ -182,7 +185,7 @@ A near-monochrome warm-neutral palette on ink, lit only by the glass.
 Inside an inverted index row, the description drops to a dark stone (#47453f) so it stays legible on bone. The bone pill's hover fill is pure white (#ffffff). Both are local to their component.
 
 ### Named Rules
-**The No-Accent Rule.** The chrome has no hue. If a surface needs colour, it gets it from the 3D glass, or it stays bone, stone or ink.
+**The One-Signal Rule.** Flare means "act here" or "you chose this". It never decorates headings, backgrounds or illustrations; if a surface needs more colour, it gets it from the 3D glass.
 
 **The Borrowed Palette Rule.** Idea mocks render each template's own palette (`--m-bg`, `--m-fg`, `--m-accent`, `--m-soft`, `--m-art`). Those colours belong to the mock and never leak into LUMEN's chrome.
 

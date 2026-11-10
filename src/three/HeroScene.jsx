@@ -1,6 +1,6 @@
 import { Suspense, useEffect, useRef, useState } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Text } from "@react-three/drei";
+import { Sparkles, Text } from "@react-three/drei";
 import * as THREE from "three";
 import Gem from "./Gem.jsx";
 import Studio from "./Studio.jsx";
@@ -105,6 +105,7 @@ function Crystal({ progress }) {
       <group ref={gem}>
         <Gem quality={mobile ? "low" : "high"} />
       </group>
+      {!reduced && <Sparkles count={mobile ? 18 : 36} scale={[3.4, 2.6, 2]} size={mobile ? 2 : 2.6} speed={0.25} opacity={0.7} noise={0.6} color="#ffd2bd" />}
     </group>
   );
 }
@@ -137,7 +138,7 @@ export default function HeroScene() {
     <div className="hero-canvas" ref={wrap} aria-hidden="true">
       <Canvas
         frameloop={visible ? "always" : "never"}
-        dpr={mobile ? [1, 1.5] : [1, 2]}
+        dpr={mobile ? [1, 1.25] : [1, 1.5]}
         camera={{ position: [0, 0, 6], fov: 35 }}
         gl={{ antialias: true, powerPreference: "high-performance" }}
       >

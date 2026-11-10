@@ -11,7 +11,7 @@ function LightBars() {
   return bars.map((y, i) => (
     <mesh key={y} position={[3.2, y, -2.5]}>
       <planeGeometry args={[6.5, i % 2 ? 0.025 : 0.06]} />
-      <meshBasicMaterial color="#edebe6" toneMapped={false} />
+      <meshBasicMaterial color={i === 1 ? "#ff5a1f" : "#edebe6"} toneMapped={false} />
     </mesh>
   ));
 }
@@ -45,15 +45,16 @@ function Cluster() {
 export default function CtaScene() {
   const wrap = useRef();
   const [visible, setVisible] = useState(false);
+  const [mounted, setMounted] = useState(false);
   useEffect(() => {
-    const io = new IntersectionObserver(([e]) => setVisible(e.isIntersecting), { rootMargin: "200px" });
+    const io = new IntersectionObserver(([e]) => { setVisible(e.isIntersecting); if (e.isIntersecting) setMounted(true); }, { rootMargin: "200px" });
     io.observe(wrap.current);
     return () => io.disconnect();
   }, []);
   return (
     <div className="cta-canvas" ref={wrap} aria-hidden="true">
-      {visible && (
-        <Canvas dpr={[1, 1.5]} camera={{ position: [0, 0, 6], fov: 35 }}>
+      {mounted && (
+        <Canvas frameloop={visible ? "always" : "never"} dpr={[1, 1.25]} camera={{ position: [0, 0, 6], fov: 35 }}>
           <color attach="background" args={["#0b0b0c"]} />
           <Suspense fallback={null}>
             <LightBars />

@@ -26,7 +26,7 @@ function Preview({ tpl, onClose, onUse }) {
         <div className="preview-mock"><Mock tpl={tpl} big /></div>
         <aside className="preview-info">
           <h3 id="pv-title">{tpl.name}</h3>
-          <p className="preview-cat">{tpl.cat[lang]}</p>
+          <p className="preview-cat">{tpl.cat[lang]} · {t.ideas.concept}</p>
           <p className="preview-desc">{tpl.desc[lang]}</p>
           <p className="preview-sub">{t.ideas.includes}</p>
           <ul className="preview-feats">
@@ -35,7 +35,7 @@ function Preview({ tpl, onClose, onUse }) {
           <p className="preview-price">
             {lang === "ka" ? <><strong>{fmt(tpl.price)}</strong>-{t.ideas.from}</> : <>{t.ideas.from} <strong>{fmt(tpl.price)}</strong></>}
           </p>
-          <button type="button" className="btn btn-bone btn-block" onClick={() => { onUse(tpl); onClose(); }}>
+          <button type="button" className="btn btn-flare btn-block" onClick={() => { onUse(tpl); onClose(); }}>
             {t.ideas.use}<Arrow />
           </button>
         </aside>
@@ -109,7 +109,10 @@ export default function Ideas({ onUse }) {
             {list.map((tpl) => (
               <li key={tpl.id} className="reel-item">
                 <button type="button" className="idea" data-cursor={t.ideas.open} onClick={(e) => openTpl(tpl, e)}>
-                  <Mock tpl={tpl} />
+                  <span className="idea-frame">
+                    <Mock tpl={tpl} />
+                    <span className="idea-tag">{t.ideas.concept}</span>
+                  </span>
                   <span className="idea-meta">
                     <span className="idea-name">{tpl.name}</span>
                     <span className="idea-cat">{tpl.cat[lang]}</span>

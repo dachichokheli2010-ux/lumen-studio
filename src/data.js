@@ -93,24 +93,36 @@ export const TEMPLATES = [
 ];
 
 export const TYPES = [
-  { id: "landing", name: { en: "Landing page", ka: "ლენდინგი" }, base: 900, pages: 1, weeks: [1, 2] },
-  { id: "business", name: { en: "Company website", ka: "კომპანიის საიტი" }, base: 1900, pages: 5, weeks: [3, 4] },
-  { id: "ecommerce", name: { en: "Online store", ka: "ონლაინ მაღაზია" }, base: 3500, pages: 8, weeks: [4, 6] },
-  { id: "app", name: { en: "Web app / 3D experience", ka: "ვებ-აპი / 3D" }, base: 5500, pages: 6, weeks: [5, 8] },
+  { id: "landing", name: { en: "Landing page", ka: "ლენდინგი" }, base: 900, pages: 1, weeks: [1, 2],
+    desc: { en: "One focused page for a launch, an offer or an ad campaign.", ka: "ერთი ფოკუსირებული გვერდი გაშვებისთვის, შეთავაზებისთვის ან სარეკლამო კამპანიისთვის." } },
+  { id: "business", name: { en: "Company website", ka: "კომპანიის საიტი" }, base: 1900, pages: 5, weeks: [3, 4],
+    desc: { en: "A full company site: home, services, about, contact and more.", ka: "სრული კომპანიის საიტი: მთავარი, სერვისები, ჩვენ შესახებ, კონტაქტი და სხვა." } },
+  { id: "ecommerce", name: { en: "Online store", ka: "ონლაინ მაღაზია" }, base: 3500, pages: 8, weeks: [4, 6],
+    desc: { en: "Products, cart, online payments and delivery options.", ka: "პროდუქტები, კალათა, ონლაინ გადახდა და მიწოდების არჩევანი." } },
+  { id: "app", name: { en: "Web app / 3D experience", ka: "ვებ-აპი / 3D" }, base: 5500, pages: 6, weeks: [5, 8],
+    desc: { en: "A custom web app or an immersive 3D experience, designed from scratch.", ka: "ინდივიდუალური ვებ-აპლიკაცია ან იმერსიული 3D გამოცდილება, ნულიდან შექმნილი." } },
 ];
 
 export const PER_PAGE = 120;
 export const CARE = 99;
 
 export const FEATURES = [
-  { id: "3d", name: { en: "3D hero", ka: "3D ჰირო" }, price: 1200, weeks: 1 },
-  { id: "ads", name: { en: "Ads campaign setup", ka: "სარეკლამო კამპანია" }, price: 700 },
-  { id: "booking", name: { en: "Booking system", ka: "დაჯავშნის სისტემა" }, price: 600 },
-  { id: "cms", name: { en: "CMS / blog", ka: "მართვის პანელი / ბლოგი" }, price: 500 },
-  { id: "copy", name: { en: "Copywriting", ka: "ტექსტების წერა" }, price: 450 },
-  { id: "lang", name: { en: "Extra language", ka: "დამატებითი ენა" }, price: 400 },
-  { id: "seo", name: { en: "Advanced SEO", ka: "SEO" }, price: 350 },
-  { id: "analytics", name: { en: "Analytics dashboard", ka: "ანალიტიკა" }, price: 300 },
+  { id: "3d", name: { en: "3D hero", ka: "3D ჰირო" }, price: 1200, weeks: 1,
+    desc: { en: "A real-time 3D scene on your first screen, built around your product or brand.", ka: "რეალურ დროში 3D სცენა პირველ ეკრანზე, თქვენი პროდუქტის ან ბრენდის გარშემო." } },
+  { id: "ads", name: { en: "Ads campaign setup", ka: "სარეკლამო კამპანია" }, price: 700,
+    desc: { en: "Strategy, first ad creatives and tracking on Google, Meta or TikTok.", ka: "სტრატეგია, პირველი სარეკლამო ვიზუალები და თრექინგი Google-ზე, Meta-ზე ან TikTok-ზე." } },
+  { id: "booking", name: { en: "Booking system", ka: "დაჯავშნის სისტემა" }, price: 600,
+    desc: { en: "Customers pick a time and book online. You get notified.", ka: "მომხმარებელი ირჩევს დროს და ჯავშნის ონლაინ, თქვენ იღებთ შეტყობინებას." } },
+  { id: "cms", name: { en: "CMS / blog", ka: "მართვის პანელი / ბლოგი" }, price: 500,
+    desc: { en: "Edit text, photos, products and posts yourself, without code.", ka: "ტექსტის, ფოტოების, პროდუქტებისა და პოსტების შეცვლა კოდის გარეშე." } },
+  { id: "copy", name: { en: "Copywriting", ka: "ტექსტების წერა" }, price: 450,
+    desc: { en: "We write the headlines and page copy in your voice.", ka: "სათაურებსა და გვერდების ტექსტს ჩვენ ვწერთ, თქვენი ტონით." } },
+  { id: "lang", name: { en: "Extra language", ka: "დამატებითი ენა" }, price: 400,
+    desc: { en: "One more full language version, with a language switch.", ka: "კიდევ ერთი სრული ენობრივი ვერსია, ენის გადამრთველით." } },
+  { id: "seo", name: { en: "Advanced SEO", ka: "SEO" }, price: 350,
+    desc: { en: "Technical SEO, structured data and speed tuning for search.", ka: "ტექნიკური SEO, სტრუქტურირებული მონაცემები და სისწრაფის ოპტიმიზაცია." } },
+  { id: "analytics", name: { en: "Analytics dashboard", ka: "ანალიტიკა" }, price: 300,
+    desc: { en: "One dashboard for visits, leads and the pages that convert.", ka: "ერთი დაფა ვიზიტებისთვის, მოთხოვნებისთვის და გვერდებისთვის, რომლებიც მუშაობს." } },
 ];
 
 export const PACKAGES = {
@@ -118,5 +130,22 @@ export const PACKAGES = {
   growth: { type: "business", pages: 8, features: ["cms", "ads", "seo"] },
   premium: { type: "app", pages: 6, features: ["3d", "cms", "seo", "analytics"] },
 };
+
+export const SPEEDS = [1, 1.25, 1.5];
+
+// Pure estimate: base + pages beyond the included ones + features, then the timeline multiplier.
+export function estimate({ type, pages, feats, speed }) {
+  const typ = TYPES.find((x) => x.id === type);
+  const extra = Math.max(0, pages - typ.pages);
+  const chosen = FEATURES.filter((f) => feats.has(f.id));
+  const subtotal = typ.base + extra * PER_PAGE + chosen.reduce((s, f) => s + f.price, 0);
+  const rush = speed > 1 ? Math.round(subtotal * (speed - 1)) : 0;
+  const total = Math.round(subtotal * speed);
+  const addWeeks = chosen.reduce((s, f) => s + (f.weeks || 0), 0) + Math.floor(extra / 6);
+  const k = speed === 1.5 ? 0.6 : speed === 1.25 ? 0.8 : 1;
+  const w0 = Math.max(1, Math.round((typ.weeks[0] + addWeeks) * k));
+  const w1 = Math.max(w0 + 1, Math.round((typ.weeks[1] + addWeeks) * k));
+  return { typ, extra, chosen, subtotal, rush, total, weeks: [w0, w1] };
+}
 
 export const fmt = (n) => "$" + n.toLocaleString("en-US");
