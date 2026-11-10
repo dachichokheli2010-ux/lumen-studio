@@ -10,7 +10,7 @@ const FLARE = "#ff5a1f";
 const BONE = "#edebe6";
 
 // Flat bone shapes; seen through glass they refract into a layout.
-function Bar({ w, h, x = 0, y = 0, z = 0, color = BONE }) {
+export function Bar({ w, h, x = 0, y = 0, z = 0, color = BONE }) {
   return (
     <mesh position={[x, y, z]}>
       <planeGeometry args={[w, h]} />
@@ -20,7 +20,7 @@ function Bar({ w, h, x = 0, y = 0, z = 0, color = BONE }) {
 }
 
 // 01 — a glass browser pane floating over a wireframe page.
-function WebPane({ quality }) {
+export function WebPane({ quality }) {
   return (
     <group rotation={[0.08, -0.32, 0.02]}>
       <group position={[0, 0, -0.35]}>
@@ -42,7 +42,7 @@ function WebPane({ quality }) {
 }
 
 // 02 — a glass knot: continuous curvature shows off real-time refraction.
-function Knot({ quality }) {
+export function Knot({ quality }) {
   const geo = useMemo(() => new THREE.TorusKnotGeometry(0.62, 0.22, 220, 36), []);
   return (
     <mesh geometry={geo} rotation={[0.4, 0, 0]}>
@@ -52,7 +52,7 @@ function Knot({ quality }) {
 }
 
 // 03 — a fanned stack of story-format ads; the front one is the call to action.
-function AdStack({ quality }) {
+export function AdStack({ quality }) {
   const play = useMemo(() => {
     const s = new THREE.Shape();
     s.moveTo(-0.07, -0.09); s.lineTo(0.1, 0); s.lineTo(-0.07, 0.09); s.closePath();
@@ -130,7 +130,7 @@ function Stage({ active, quality }) {
 }
 
 // Light bars behind the stage give the glass something to bend.
-function Backdrop() {
+export function Backdrop() {
   const ys = [-1.3, -0.55, 0.2, 0.95];
   return ys.map((y, i) => (
     <mesh key={y} position={[0, y, -2.6]}>

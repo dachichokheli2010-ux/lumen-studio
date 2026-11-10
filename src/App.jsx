@@ -17,6 +17,7 @@ import Faq from "./components/Faq.jsx";
 import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
 import MobileCta from "./components/MobileCta.jsx";
+import { PageHero, PageExtra, PageCta } from "./components/Page.jsx";
 
 // The scroll-driven background world loads after first paint.
 const ScrollWorld = lazy(() => import("./three/ScrollWorld.jsx"));
@@ -114,8 +115,15 @@ export default function App() {
         </main>
       ) : (
         <main id="main" className={`page page-${page}`} key={page}>
-          {sections[page] || <NotFound />}
-          {sections[page] && <NextPage page={page} />}
+          {sections[page] ? (
+            <>
+              {page !== "contact" && <PageHero page={page} />}
+              {sections[page]}
+              <PageExtra page={page} />
+              <PageCta page={page} />
+              <NextPage page={page} />
+            </>
+          ) : <NotFound />}
         </main>
       )}
       <MobileCta page={page} />
