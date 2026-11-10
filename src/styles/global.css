@@ -192,3 +192,130 @@ input, textarea { caret-color: var(--bone); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
 }
+
+
+/* ---------- Experience polish ---------- */
+:root {
+  --line: rgba(237, 235, 230, 0.12);
+  --line-2: rgba(237, 235, 230, 0.24);
+  --surface-glass: rgba(20, 20, 21, 0.72);
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 50% -18%, rgba(174, 159, 129, 0.085), transparent 42rem),
+    var(--ink);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+  opacity: .12;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+  mix-blend-mode: soft-light;
+}
+
+a, button, input, textarea { -webkit-tap-highlight-color: transparent; }
+button { touch-action: manipulation; }
+:focus-visible { outline-offset: 5px; }
+
+.nav {
+  transition: background .45s ease, backdrop-filter .45s ease, padding .45s var(--ease), border-color .45s ease;
+}
+.nav.is-solid {
+  border-bottom: 1px solid rgba(237, 235, 230, .07);
+  background: rgba(11, 11, 12, .78);
+}
+.brand { transition: opacity .25s ease; }
+.brand:hover { opacity: .72; }
+
+.btn { box-shadow: 0 0 0 0 rgba(237, 235, 230, 0); }
+.btn-bone:hover { box-shadow: 0 8px 34px -18px rgba(237, 235, 230, .42); }
+.btn-line:hover { box-shadow: 0 8px 34px -18px rgba(237, 235, 230, .2); }
+
+.manifesto p { text-wrap: pretty; }
+.svc { transition: border-color .35s ease; }
+.svc:hover { border-color: rgba(237, 235, 230, .34); }
+
+.idea .mock {
+  outline: 1px solid rgba(237, 235, 230, .09);
+  outline-offset: -1px;
+}
+.idea:focus-visible { outline: 0; }
+.idea:focus-visible .mock {
+  outline: 2px solid var(--bone);
+  outline-offset: 5px;
+}
+
+.receipt {
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(237, 235, 230, .055), transparent 55%),
+    var(--ink-2);
+  border-color: rgba(237, 235, 230, .16);
+}
+.receipt-total { letter-spacing: -.055em; }
+
+.form label { min-width: 0; }
+.form input, .form textarea {
+  width: 100%;
+  min-width: 0;
+  border-radius: 12px;
+  transition: border-color .25s ease, background .25s ease, box-shadow .25s ease;
+}
+.form input:focus, .form textarea:focus {
+  border-color: rgba(237, 235, 230, .62);
+  background: rgba(237, 235, 230, .035);
+  box-shadow: 0 0 0 3px rgba(237, 235, 230, .055);
+  outline: none;
+}
+.form [aria-invalid="true"] { border-color: var(--danger) !important; }
+.form-status { min-height: 1.5em; }
+
+.preview {
+  background:
+    radial-gradient(ellipse at 20% 10%, rgba(177, 165, 139, .08), transparent 42rem),
+    var(--ink);
+}
+.preview-mock .mock { box-shadow: 0 36px 100px -45px rgba(0, 0, 0, .95); }
+.preview-close { transition: border-color .25s ease, background .25s ease; }
+.preview-close:hover { background: rgba(35, 35, 36, .88); }
+
+@media (min-width: 1200px) {
+  .hero-copy { padding-bottom: clamp(90px, 12vh, 150px); }
+  .hero-sub { max-width: 48ch; }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --gutter: 20px;
+    --fs-display: clamp(2.6rem, 12vw, 5rem);
+  }
+  .hero { min-height: 680px; }
+  .hero-title { font-size: clamp(2.65rem, 11.2vw, 5rem); }
+  :lang(ka) .hero-title { font-size: clamp(1.95rem, 8vw, 3.4rem); }
+  .hero-copy { bottom: max(0px, env(safe-area-inset-bottom)); }
+  .hero-actions { width: 100%; }
+  .hero-actions .btn { flex: 1 1 auto; }
+  .manifesto { padding-bottom: 112px; }
+  .ideas-pin { padding-top: 72px; }
+  .svc { gap: 12px 20px; }
+  .receipt { border-radius: 18px; }
+  .contact-body { gap: 42px; }
+}
+
+@media (max-width: 420px) {
+  .hero-title { font-size: 2.55rem; }
+  :lang(ka) .hero-title { font-size: 1.9rem; }
+  .hero-actions { display: grid; grid-template-columns: 1fr 1fr; }
+  .hero-actions .btn { padding-inline: 14px; white-space: normal; }
+  .receipt-total { font-size: clamp(2.7rem, 14vw, 4rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  body::before { display: none; }
+  .hero-scroll i::after { animation: none; }
+}
