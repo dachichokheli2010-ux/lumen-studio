@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-10T16:00:00Z",
+  "title": "Design System: LUMEN",
+  "extensions": {
+    "colorMeta": {
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#0b0b0c", "tonalRamp": ["#050506", "#0b0b0c", "#121213", "#1a1a1b", "#2c2c2e", "#47453f", "#6e6b65", "#9b978f"] },
+      "ink-2": { "role": "neutral", "displayName": "Ink Raised", "canonical": "#121213", "tonalRamp": ["#0b0b0c", "#121213", "#1a1a1b", "#232324", "#2c2c2e", "#3a3a3c", "#4a4a4c", "#5c5c5e"] },
+      "ink-3": { "role": "neutral", "displayName": "Ink Deep Mark", "canonical": "#1a1a1b", "tonalRamp": ["#0b0b0c", "#121213", "#1a1a1b", "#232324", "#2c2c2e", "#3a3a3c", "#4a4a4c", "#5c5c5e"] },
+      "bone": { "role": "primary", "displayName": "Bone", "canonical": "#edebe6", "tonalRamp": ["#2a2925", "#47453f", "#6e6b65", "#9b978f", "#c2bfb8", "#dad8d2", "#edebe6", "#ffffff"] },
+      "stone": { "role": "neutral", "displayName": "Warm Stone", "canonical": "#9b978f", "tonalRamp": ["#2a2925", "#3d3b37", "#56534d", "#76726b", "#9b978f", "#b5b2ab", "#cfccc6", "#e6e4df"] },
+      "line": { "role": "neutral", "displayName": "Hairline", "canonical": "rgba(237, 235, 230, 0.14)", "tonalRamp": ["rgba(237,235,230,0.04)", "rgba(237,235,230,0.08)", "rgba(237,235,230,0.14)", "rgba(237,235,230,0.20)", "rgba(237,235,230,0.28)", "rgba(237,235,230,0.40)", "rgba(237,235,230,0.60)", "rgba(237,235,230,0.80)"] },
+      "line-2": { "role": "neutral", "displayName": "Hairline Strong", "canonical": "rgba(237, 235, 230, 0.28)", "tonalRamp": ["rgba(237,235,230,0.04)", "rgba(237,235,230,0.08)", "rgba(237,235,230,0.14)", "rgba(237,235,230,0.20)", "rgba(237,235,230,0.28)", "rgba(237,235,230,0.40)", "rgba(237,235,230,0.60)", "rgba(237,235,230,0.80)"] },
+      "danger": { "role": "status", "displayName": "Coral", "canonical": "#ff8a7a", "tonalRamp": ["#4a1a14", "#7a2c22", "#b04535", "#e06450", "#ff8a7a", "#ffaa9e", "#ffc9c1", "#ffe6e2"] },
+      "ok": { "role": "status", "displayName": "Sage", "canonical": "#b9e3a5", "tonalRamp": ["#1f3318", "#34532a", "#4f7a40", "#73a35f", "#97c784", "#b9e3a5", "#d3eec6", "#ecf8e5"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero h1, two lines, mix-blend difference over the bone wordmark. Georgian: clamp(2rem, min(4.6vw, 8svh), 4rem), -0.01em, 1.1." },
+      "headline": { "displayName": "Headline", "purpose": "Every section h2, balanced, max 18ch. Georgian: -0.01em, 1.12." },
+      "index": { "displayName": "Index", "purpose": "Service index-row names. Georgian: clamp(1.6rem, 3.4vw, 2.8rem), -0.01em." },
+      "statement": { "displayName": "Statement", "purpose": "Manifesto paragraph with scrubbed word brightening. Georgian: clamp(1.5rem, 3.3vw, 2.9rem), 0 tracking, 1.3, 30ch." },
+      "figure": { "displayName": "Figure", "purpose": "Live estimate total in the receipt; tabular numerals." },
+      "title": { "displayName": "Title", "purpose": "Builder fieldset legends; process titles and FAQ summaries sit in the same band." },
+      "lead": { "displayName": "Lead", "purpose": "Section intros in stone, max 46ch." },
+      "body": { "displayName": "Body", "purpose": "Running copy. Georgian line-height 1.7." },
+      "label": { "displayName": "Label", "purpose": "Hints, meta, field labels, legal." },
+      "wordmark-3d": { "displayName": "3D Wordmark", "purpose": "Troika Text LUMEN in the hero scene only; self-hosted OFL TTF." }
+    },
+    "shadows": [
+      { "name": "mock-drop", "value": "0 30px 60px -30px rgba(0,0,0,.8)", "purpose": "Idea mocks." },
+      { "name": "panel-drop", "value": "0 40px 80px -40px rgba(0,0,0,.9)", "purpose": "The receipt panel." },
+      { "name": "chrome-blur", "value": "background: rgba(11,11,12,.72); backdrop-filter: blur(14px) saturate(1.2)", "purpose": "Solid nav over scrolled content (preview close uses .7 and 10px)." },
+      { "name": "focus-ring", "value": "outline: 1.5px solid #edebe6; outline-offset: 4px; border-radius: 4px", "purpose": "Global :focus-visible; proxies for hidden inputs use offset 2-3px." }
+    ],
+    "motion": [
+      { "name": "ease", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Expo-out; all CSS transitions. GSAP equivalent expo.out." },
+      { "name": "ease-wipe", "value": "expo.inOut", "purpose": "Loader exit clip wipe." },
+      { "name": "line-reveal", "value": "SplitText lines, mask, yPercent 115 -> 0, 1.3s expo.out, stagger 0.09, start top 88%", "purpose": "Every headline." },
+      { "name": "block-rise", "value": "y 40 -> 0, autoAlpha, 1.1s expo.out, start top 90%, once", "purpose": "Rows and blocks." },
+      { "name": "fill-wipe", "value": "::before translateY(101%) -> 0, 0.6s var(--ease)", "purpose": "Pill button hover." },
+      { "name": "row-wipe", "value": "clip-path inset(100% 0 0 0) -> inset(0), 0.7s var(--ease)", "purpose": "Index row hover." },
+      { "name": "smooth-scroll", "value": "Lenis lerp 0.09; anchor scroll 1.4s", "purpose": "Page scroll." },
+      { "name": "hero-pin", "value": "165svh track; crystal pass p 0-0.75, lift-away p 0.75-1; copy fades p 0.52-0.72", "purpose": "Hero scroll choreography." }
+    ],
+    "breakpoints": [
+      { "name": "xs", "value": "520px" },
+      { "name": "nav-cta", "value": "560px" },
+      { "name": "sm", "value": "760px" },
+      { "name": "form", "value": "860px" },
+      { "name": "md", "value": "900px" },
+      { "name": "builder", "value": "960px" },
+      { "name": "nav", "value": "1080px" }
+    ],
+    "material3d": {
+      "geometry": "LatheGeometry brilliant-cut profile [(0,.58),(.56,.58),(.98,.2),(1,.12),(0,-1.05)], 10-12 segments, toNonIndexed",
+      "glass": { "transmission": 1, "thickness": 0.75, "roughness": 0.02, "ior": 1.55, "chromaticAberration": 0.9, "anisotropicBlur": 0.12, "distortion": 0.15, "distortionScale": 0.4, "temporalDistortion": 0.05, "clearcoat": 1, "backside": true, "backsideThickness": 0.35, "envMapIntensity": 1.6, "attenuationDistance": 2.4, "attenuationColor": "#ffffff", "color": "#ffffff", "background": "#2a2a2d", "high": { "samples": 10, "resolution": 768 }, "low": { "samples": 6, "resolution": 512 } },
+      "lights": "Environment res 256 frames 1, group rotation [-PI/3, 0, 1]: rect 6 @ [0,5,-9] 10x10; rect 3 @ [0,-4,6] 12x4; three 50x2 strips at 2; ring #ffd9b0 3 @ [-6,2,4]; ring #c7d8ff 3 @ [6,-2,4]",
+      "stage": "camera z 6 fov 35, clear #0b0b0c; bone wordmark toneMapped false at z -1.6 fitted to 88% width (90% mobile)"
+    }
+  },
+  "components": [
+    {
+      "name": "Bone Button",
+      "kind": "button",
+      "refersTo": "button-bone",
+      "description": "Primary action; bone pill with white fill wipe and arrow nudge.",
+      "html": "<a class=\"ds-btn ds-btn-bone\" href=\"#\">Get a price <svg class=\"ds-arrow\" viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
+      "css": ".ds-btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 12px; height: 56px; padding: 0 28px; border-radius: 999px; font-family: var(--sans, 'Archivo Variable', sans-serif); font-size: 1rem; font-weight: 600; text-decoration: none; border: 1px solid transparent; cursor: pointer; white-space: nowrap; overflow: hidden; isolation: isolate; transition: color .5s cubic-bezier(0.16,1,0.3,1), border-color .4s, transform .4s cubic-bezier(0.16,1,0.3,1); } .ds-btn::before { content: ''; position: absolute; inset: 0; z-index: -1; border-radius: inherit; transform: translateY(101%); transition: transform .6s cubic-bezier(0.16,1,0.3,1); } .ds-btn:hover::before { transform: translateY(0); } .ds-btn:active { transform: scale(.98); } .ds-btn:focus-visible { outline: 1.5px solid var(--bone, #edebe6); outline-offset: 4px; } .ds-arrow { transition: transform .5s cubic-bezier(0.16,1,0.3,1); } .ds-btn:hover .ds-arrow { transform: translateX(4px); } .ds-btn-bone { background: var(--bone, #edebe6); color: var(--ink, #0b0b0c); } .ds-btn-bone::before { background: #ffffff; }"
+    },
+    {
+      "name": "Line Button",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "Secondary action; hairline pill that fills bone on hover.",
+      "html": "<a class=\"ds-btn-line\" href=\"#\">See ideas</a>",
+      "css": ".ds-btn-line { position: relative; display: inline-flex; align-items: center; height: 56px; padding: 0 28px; border-radius: 999px; border: 1px solid var(--line-2, rgba(237,235,230,.28)); color: var(--bone, #edebe6); background: transparent; font-family: var(--sans, 'Archivo Variable', sans-serif); font-weight: 600; text-decoration: none; overflow: hidden; isolation: isolate; transition: color .5s cubic-bezier(0.16,1,0.3,1), border-color .4s; } .ds-btn-line::before { content: ''; position: absolute; inset: 0; z-index: -1; background: var(--bone, #edebe6); transform: translateY(101%); transition: transform .6s cubic-bezier(0.16,1,0.3,1); } .ds-btn-line:hover { color: var(--ink, #0b0b0c); border-color: var(--bone, #edebe6); } .ds-btn-line:hover::before { transform: translateY(0); } .ds-btn-line:focus-visible { outline: 1.5px solid var(--bone, #edebe6); outline-offset: 4px; }"
+    },
+    {
+      "name": "Filter Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Pill filter or quick action; pressed state fills bone.",
+      "html": "<div class=\"ds-chips\"><button class=\"ds-chip\" aria-pressed=\"true\">All</button><button class=\"ds-chip\" aria-pressed=\"false\">Restaurant</button><button class=\"ds-chip\" aria-pressed=\"false\">Fitness</button></div>",
+      "css": ".ds-chips { display: flex; flex-wrap: wrap; gap: 8px; } .ds-chip { height: 38px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line-2, rgba(237,235,230,.28)); background: transparent; font-family: var(--sans, 'Archivo Variable', sans-serif); font-size: .9rem; font-weight: 500; color: var(--stone, #9b978f); cursor: pointer; transition: color .3s, border-color .3s, background .3s; } .ds-chip:hover { color: var(--bone, #edebe6); border-color: var(--bone, #edebe6); } .ds-chip[aria-pressed='true'] { background: var(--bone, #edebe6); color: var(--ink, #0b0b0c); border-color: var(--bone, #edebe6); } .ds-chip:focus-visible { outline: 1.5px solid var(--bone, #edebe6); outline-offset: 4px; }"
+    },
+    {
+      "name": "Language Switch",
+      "kind": "nav",
+      "refersTo": "chip-selected",
+      "description": "KA/EN pill toggle in the nav.",
+      "html": "<div class=\"ds-lang\"><button aria-pressed=\"false\">ქარ</button><button aria-pressed=\"true\">EN</button></div>",
+      "css": ".ds-lang { display: inline-flex; border: 1px solid var(--line-2, rgba(237,235,230,.28)); border-radius: 999px; padding: 3px; } .ds-lang button { border: 0; background: none; height: 32px; min-width: 40px; padding: 0 10px; border-radius: 999px; font-family: 'Archivo Variable', 'Noto Sans Georgian Variable', sans-serif; font-size: .8rem; font-weight: 600; color: var(--stone, #9b978f); cursor: pointer; transition: all .3s; } .ds-lang button[aria-pressed='true'] { background: var(--bone, #edebe6); color: var(--ink, #0b0b0c); } .ds-lang button:focus-visible { outline: 1.5px solid var(--bone, #edebe6); outline-offset: 4px; }"
+    },
+    {
+      "name": "Index Row",
+      "kind": "custom",
+      "refersTo": "index-row",
+      "description": "Typographic list row between hairlines; bone wash wipes up on hover.",
+      "html": "<ul class=\"ds-index\"><li class=\"ds-row\"><span class=\"ds-row-name\">Websites</span><span class=\"ds-row-desc\">Custom-designed company sites, fast on every phone.</span><span class=\"ds-row-price\">from $1,900</span></li></ul>",
+      "css": ".ds-index { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line, rgba(237,235,230,.14)); color: var(--bone, #edebe6); font-family: 'Archivo Variable', sans-serif; } .ds-row { position: relative; display: grid; grid-template-columns: minmax(0,1.3fr) minmax(0,1fr) auto; gap: 12px 48px; align-items: baseline; padding: clamp(22px,3vw,36px) 0; border-bottom: 1px solid var(--line, rgba(237,235,230,.14)); isolation: isolate; } .ds-row::before { content: ''; position: absolute; inset: 0; z-index: -1; background: var(--bone, #edebe6); clip-path: inset(100% 0 0 0); transition: clip-path .7s cubic-bezier(0.16,1,0.3,1); } .ds-row-name { font-size: clamp(1.9rem,4.2vw,3.6rem); font-weight: 700; letter-spacing: -0.035em; line-height: 1; font-variation-settings: 'wdth' 118; transition: transform .7s cubic-bezier(0.16,1,0.3,1), color .4s; } .ds-row-desc { color: var(--stone, #9b978f); max-width: 42ch; transition: color .4s; } .ds-row-price { font-variant-numeric: tabular-nums; white-space: nowrap; transition: color .4s; } .ds-row:hover::before { clip-path: inset(0 0 0 0); } .ds-row:hover .ds-row-name { transform: translateX(16px); color: var(--ink, #0b0b0c); } .ds-row:hover .ds-row-desc { color: #47453f; } .ds-row:hover .ds-row-price { color: var(--ink, #0b0b0c); }"
+    },
+    {
+      "name": "Receipt",
+      "kind": "card",
+      "refersTo": "receipt",
+      "description": "Sticky live-estimate panel; the only raised surface.",
+      "html": "<aside class=\"ds-receipt\"><p class=\"ds-r-label\">Estimate</p><p class=\"ds-r-total\">$2,740</p><p class=\"ds-r-label\">Delivery: 4 weeks</p><ul class=\"ds-r-lines\"><li><span>Company site</span><span>$1,900</span></li><li><span>CMS</span><span>$480</span></li></ul></aside>",
+      "css": ".ds-receipt { display: grid; gap: 14px; padding: clamp(24px,3vw,36px); border-radius: 22px; background: var(--ink-2, #121213); border: 1px solid var(--line, rgba(237,235,230,.14)); box-shadow: 0 40px 80px -40px rgba(0,0,0,.9); color: var(--bone, #edebe6); font-family: 'Archivo Variable', sans-serif; margin: 0; } .ds-receipt p { margin: 0; } .ds-r-label { color: var(--stone, #9b978f); font-size: .9rem; } .ds-r-total { font-size: clamp(3rem,5.5vw,4.75rem); font-weight: 800; line-height: .95; letter-spacing: -0.045em; font-variation-settings: 'wdth' 118; font-variant-numeric: tabular-nums; } .ds-r-lines { list-style: none; margin: 6px 0; padding: 18px 0; display: grid; gap: 10px; border-block: 1px dashed var(--line-2, rgba(237,235,230,.28)); font-size: .94rem; } .ds-r-lines li { display: flex; justify-content: space-between; gap: 16px; color: var(--stone, #9b978f); } .ds-r-lines li span:last-child { color: var(--bone, #edebe6); font-variant-numeric: tabular-nums; }"
+    },
+    {
+      "name": "Underline Field",
+      "kind": "input",
+      "refersTo": "text-field",
+      "description": "Boxless text field with stone label; underline turns bone on focus, coral on error.",
+      "html": "<label class=\"ds-field\"><span>Name</span><input placeholder=\"\"></label>",
+      "css": ".ds-field { display: grid; gap: 8px; font-family: 'Archivo Variable', 'Noto Sans Georgian Variable', sans-serif; } .ds-field > span { font-size: .88rem; color: var(--stone, #9b978f); } .ds-field input { width: 100%; padding: 14px 0; border: 0; border-bottom: 1px solid var(--line-2, rgba(237,235,230,.28)); border-radius: 0; background: transparent; color: var(--bone, #edebe6); font: inherit; font-size: 1.05rem; caret-color: var(--bone, #edebe6); transition: border-color .3s; } .ds-field input:focus { outline: none; border-color: var(--bone, #edebe6); } .ds-field input[aria-invalid='true'] { border-color: var(--danger, #ff8a7a); }"
+    },
+    {
+      "name": "Idea Mock",
+      "kind": "custom",
+      "refersTo": "idea-mock",
+      "description": "CSS-typeset miniature site in a template's borrowed palette; shrinks and rounds on hover.",
+      "html": "<button class=\"ds-idea\"><div class=\"ds-mock\" style=\"--m-bg:#170d08;--m-fg:#f3e3cf;--m-accent:#e39a52;--m-art:radial-gradient(60% 60% at 40% 40%, #ffb35c 0%, #b4471a 45%, #170d08 75%)\"><div class=\"ds-mk-bar\"><i></i><i></i><i></i></div><div class=\"ds-mk-page\"><div class=\"ds-mk-art\"></div><h4>Fire, wine &amp; long dinners</h4><span class=\"ds-mk-btn\">Book</span></div></div><span class=\"ds-idea-name\">Ember</span></button>",
+      "css": ".ds-idea { display: grid; gap: 16px; width: 320px; padding: 0; border: 0; background: none; text-align: left; cursor: pointer; color: var(--bone, #edebe6); font-family: 'Archivo Variable', sans-serif; } .ds-mock { container-type: inline-size; aspect-ratio: 16/11; width: 100%; border-radius: 14px; overflow: hidden; background: var(--m-bg); color: var(--m-fg); display: flex; flex-direction: column; box-shadow: 0 30px 60px -30px rgba(0,0,0,.8); transition: transform .9s cubic-bezier(0.16,1,0.3,1), border-radius .9s cubic-bezier(0.16,1,0.3,1); } .ds-idea:hover .ds-mock, .ds-idea:focus-visible .ds-mock { transform: scale(.97); border-radius: 22px; } .ds-mk-bar { display: flex; gap: 1.1cqi; padding: 2cqi 2.6cqi; background: color-mix(in srgb, var(--m-fg) 7%, var(--m-bg)); } .ds-mk-bar i { width: 1.6cqi; height: 1.6cqi; border-radius: 50%; background: var(--m-fg); opacity: .25; } .ds-mk-page { position: relative; flex: 1; padding: 6cqi 5.5cqi; overflow: hidden; } .ds-mk-page h4 { position: relative; z-index: 2; margin: 0; max-width: 56%; font-family: Georgia, serif; font-size: 7.2cqi; line-height: .98; font-weight: 600; } .ds-mk-art { position: absolute; right: -4%; top: 14%; width: 50%; aspect-ratio: 1; border-radius: 50%; background: var(--m-art); } .ds-mk-btn { position: relative; z-index: 2; display: inline-block; margin-top: 4cqi; padding: 1.6cqi 3.6cqi; border-radius: 99px; background: var(--m-accent); color: var(--m-bg); font: 600 2.1cqi/1 'Archivo Variable', sans-serif; } .ds-idea-name { font-size: 1.35rem; font-weight: 700; font-variation-settings: 'wdth' 112; letter-spacing: -0.02em; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Lit Stage",
+    "overview": "LUMEN is a dark studio with one light source. The ground is ink, the type is bone, everything secondary is warm stone, and the only colour on the page arrives as spectral dispersion through a real-time 3D crystal. The chrome never competes with the glass: no accent hue, no gradients in the UI, no cards standing in for structure. Hairline rules and very large, wide Archivo carry the hierarchy.\n\nDensity is low and the scale is theatrical. Headlines run wide (variable width axis 112 to 125) and tightly tracked, sections are separated by 120 to 200px of ink, and lists are typographic index rows that invert to bone on hover. Motion is one grammar everywhere: expo-out, line-masked reveals, and wipes driven by clip-path.",
+    "keyCharacteristics": [
+      "Ink, bone and stone only; colour comes from refraction, never from a UI token.",
+      "Wide Archivo display, set tight; Noto Sans Georgian set looser and calmer.",
+      "Bone pill buttons and pill chips; hairline rules instead of containers.",
+      "Expo-out everywhere: line reveals, fill wipes, row wipes.",
+      "The 3D stage (crystal, wordmark, studio light rig) is the hero and the signature."
+    ],
+    "rules": [
+      { "name": "The No-Accent Rule", "body": "The chrome has no hue. If a surface needs colour, it gets it from the 3D glass, or it stays bone, stone or ink.", "section": "colors" },
+      { "name": "The Borrowed Palette Rule", "body": "Idea mocks render each template's own palette (`--m-bg`, `--m-fg`, `--m-accent`, `--m-soft`, `--m-art`). Those colours belong to the mock and never leak into LUMEN's chrome.", "section": "colors" },
+      { "name": "The Georgian Rule", "body": "`:lang(ka)` is a first-class setting, not a fallback. Body line-height rises to 1.7. Display, headline, index and statement sizes step down (hero clamp(2rem, min(4.6vw, 8svh), 4rem), contact display clamp(2.2rem, 6vw, 4.6rem), service names clamp(1.6rem, 3.4vw, 2.8rem), manifesto clamp(1.5rem, 3.3vw, 2.9rem)). Tracking relaxes to -0.01em (the manifesto goes to 0), and line-height opens to 1.1 to 1.3. Never carry Latin's -0.04em tracking onto Mkhedruli.", "section": "typography" },
+      { "name": "The Sentence-Case Rule", "body": "LUMEN's own UI is never uppercased or letter-spaced for effect. The only wide tracking is the nav brand (0.14em, 800, `wdth` 125). Uppercase appears only inside mocks, as part of a template's look.", "section": "typography" },
+      { "name": "The One Light Rule", "body": "Colour on the page is earned optically: bone light bars, a bone wordmark and white softboxes, split by glass. Never fake dispersion with CSS gradients in the chrome.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep every UI surface to ink, ink-2, bone, stone and the two hairline alphas; let the 3D glass supply all colour.",
+      "Do use a bone pill (56px, 999px radius, fill-wipe hover) for the primary action and a `line-2` outline pill for the secondary one.",
+      "Do present lists as index rows between hairlines, with the bone clip-path wipe on hover.",
+      "Do set every display line with masked, expo-out line reveals and the `--ease` curve.",
+      "Do apply the Georgian Rule (looser line-height, -0.01em tracking, smaller display clamps) whenever `:lang(ka)` is active.",
+      "Do use tabular numerals for every price, counter and total.",
+      "Do build new glass from the Gem recipe and the Studio light rig rather than tuning a new material."
+    ],
+    "donts": [
+      "Don't introduce a UI accent hue, gradient fills or coloured glows in the chrome; `danger` and `ok` are for form status only.",
+      "Don't use grids of same-size icon cards; the receipt and feature tiles are the only bordered containers.",
+      "Don't uppercase or widely track LUMEN's own labels.",
+      "Don't apply Latin display tracking (-0.035 to -0.045em) to Georgian.",
+      "Don't ship raster images for mocks or icons; mocks are CSS and icons are authored SVG at a 1.8 stroke.",
+      "Don't let a mock's borrowed palette or its serif leak into LUMEN's own type or colour."
+    ]
+  }
+}
